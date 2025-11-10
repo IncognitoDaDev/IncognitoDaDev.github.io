@@ -1,0 +1,223 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: aliceblue;
+  position: relative;
+  padding-bottom: 180px;
+  margin: 0px;
+  min-height: calc(100dvh - 180px);
+}
+
+.Sidenav {
+  overflow-y: auto;
+  width: 172px;
+  background-color: aqua;
+  position: absolute;
+  z-index: 0;
+  top: 100px;
+  bottom: 80px;
+  left: 0;
+
+  padding: 6px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.Container {
+  display: flexbox;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(46, 154, 154);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 20px;
+}
+
+header a
+{
+  text-decoration: none;
+  color: #3b3b3b;
+
+  padding: 3px;
+}
+
+.HeaderButton {
+  transition: 200ms;
+  padding: 3px;
+  width: fit-content;
+  margin-left: 20px;
+  
+  margin-top: 21px;
+  border-radius: 3px;
+
+  background-color: aliceblue;
+
+  font-size: 22px;
+}
+
+.HeaderButton:hover {
+  transition: 250ms;
+  padding: 3px;
+  margin-top: 19px;
+
+  font-size: 26px;
+}
+
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(46, 154, 154);
+  position: absolute;
+  bottom: 0px;
+}
+
+.Main {
+  margin-left: 15%;
+  padding: 20px 20px;
+  background-color: bisque;
+  margin-right: 15%;
+  top: 100px;
+  position: relative;
+
+  border-radius: 4px;
+}
+
+.Main h1 {
+  text-decoration: none;
+  font-size: 50px;
+  padding: 6px;
+}
+
+.Main h2 {
+  text-decoration: none;
+  font-size: 30px;
+  padding: 6px;
+}
+
+.Main p1 {
+  padding: 6px;
+  text-decoration: none;
+  font-size: 22px;
+  display: block;
+}
+
+.divRangeSpacer
+{
+  margin: auto;
+}
+
+.divRangeSpacer:hover .SpacerSubchapter
+{
+  transition: 250ms;
+  background-color: rgb(151, 151, 151);
+
+  width: 7px;
+}
+
+.divRangeSpacer:hover .SpacerChapter
+{
+  transition: 250ms;
+  background-color: rgb(151, 151, 151);
+
+  width: 7px;
+}
+
+.SpacerChapter {
+  transition: 250ms;
+  border-radius: 5px;
+  background-color: rgb(170, 170, 170);
+
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  width: 4px;
+  height: 45px;
+}
+
+.SpacerSubchapter {
+  transition: 250ms;
+  border-radius: 5px;
+  background-color: rgb(170, 170, 170);
+
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  width: 4px;
+  height: 25px;
+}
+
+.Sidenav a {
+  text-decoration: none;
+  color: #3b3b3b;
+
+  padding: 3px;
+}
+
+.SidenavChapter {
+  transition: 200ms;
+  padding: 3px;
+  width: fit-content;
+  margin: auto;
+  border-radius: 3px;
+
+  background-color: aliceblue;
+
+  font-size: 22px;
+}
+
+.SidenavChapter:hover {
+  transition: 250ms;
+  padding: 6px;
+
+  font-size: 26px;
+}
+
+.SidenavSubchapter {
+  transition: 200ms;
+  padding: 3px;
+  border-radius: 3px;
+  width: fit-content;
+  margin: auto;
+  border-radius: 3px;
+
+  background-color: aliceblue;
+
+  font-size: 16px;
+}
+
+.SidenavSubchapter:hover {
+  transition: 250ms;
+  padding: 4px;
+
+  font-size: 22px;
+}
+
+.MainChapter {
+  background-color: aliceblue;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.MainSelectionDiv {
+  position: relative;
+  z-index: 0;
+  transform: translateY(-35px);
+  background-color: aquamarine;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0px;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}

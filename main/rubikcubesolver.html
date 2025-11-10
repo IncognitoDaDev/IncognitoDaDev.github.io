@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <title>Rubik Cube Solver</title>
+    <link rel="stylesheet" href="documentation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="HeaderButton">
+            <a href="../index.html">Homepage</a>
+        </div>
+    </header>
+
+    <div class="Container">
+        <div class="Sidenav">
+            <div class="SidenavChapter"><a>Introduction</a></div>
+            <div class="divRangeSpacer">
+                <div class="SpacerSubchapter"></div>
+            </div>
+            <div class="SidenavSubchapter"><a>Backstory</a></div>
+            <div class="divRangeSpacer">
+                <div class="SpacerChapter"></div>
+            </div>
+            <div class="SidenavChapter"><a>How I made it</a></div>
+            <div class="divRangeSpacer">
+                <div class="SpacerSubchapter"></div>
+            </div>
+            <div class="SidenavSubchapter"><a>main.cpp</a></div>
+            <div class="divRangeSpacer">
+                <div class="SpacerSubchapter"></div>
+            </div>
+            <div class="SidenavSubchapter"><a>rubikcube.cpp</a></div>
+            <div class="divRangeSpacer">
+                <div class="SpacerChapter"></div>
+            </div>
+            <div class="SidenavChapter"><a>Conclusion</a></div>
+        </div>
+        <div class="Main">
+            <div class="MainChapter">
+                <h1>Rubik Cube Solver</h1>
+            </div>
+
+            <div class="MainChapter">
+                <h2>Introduction</h2>
+            </div>
+
+            <div class="MainSelectionDiv">
+                <p1>I like solving Rubik Cubes! </p1>
+                // Insert here a picture of rubik cube collection
+                <p1>They help you learn patterns and stuff...
+                    <br> But people find that so boring and lame! They'd rather watch <i>robots do stuff!</i>
+                    <br> Well then, how about a <b>robot that solves rubik cubes</b>?
+                </p1>
+                // Insert here picture of finalized project
+                <p1>
+                    And thus, that's how Rubik Cube Solver came to co-exist with our plane of existence.
+                </p1>
+            </div>
+
+            <div class="MainChapter">
+                <h2>Backstory</h2>
+            </div>
+
+            <div class="MainSelectionDiv">
+                <p1>This is a C++ project made to simulate and solve Rubik Cubes in console.</p1>
+
+                <p1>
+                    The idea of creating this project was firstly suggested to me by a mentor during a robotics
+                    competition
+                    named FTC organized by the organizators of FIRST as an attempt to improve my coding capabilities
+                    and have something to show during my time in robotics. Two years later of hesistation, I have given
+                    it a try. 
+                </p1>
+            </div>
+
+            <div class="MainChapter">
+                <h2>How I made it</h2>
+            </div>
+
+            <div class="MainSelectionDiv">
+                <p1>
+                    The code is split in 4 scripts <i>(main.cpp, RubikCube.cpp, AStarSearch.cpp, PuzzleState.cpp, all
+                    made from scratch)</i>
+                    This section will be split in 3 subchapters: <b>Reading and Hashing, Rotating the Rubik Cube,
+                    Solving using A* Star</b>
+                </p1>
+            </div>
+
+            <div class="MainChapter">
+                <h2>Reading and Hashing</h2>
+            </div>
+
+            <div class="MainSelectionDiv">
+                <p1>
+                    The first thing you'll find yourself asking when it comes to reading and hashing a rubik cube is...
+                    <b>how do I save all of the information that describle the color and the way is facing?</b>
+                    <br> It is quite a tricky question to answer...
+                </p1>
+                // Insert here picture of describling the way data is being handled
+                <p1>
+                    My solution consists of making a list of 6 integer matrices, sized 3 by 3.
+                    6 matrices, one for every face, that have their integers reflecting what color it is.
+                    <i>For example, we asociate the color WHITE with 0, Blue with 1 and so on...</i>
+                    <br>
+                    <br> But all of that isn't enough, we need to also know where are the faces facing...
+                    The rubik cube is defined under 6 orientations (Front, Back, Up, Down, Left, Right).
+                    That means we'll have to create a list that remembers the faces' orientation.
+                    <br> // Insert here code that defines direction
+                    <br> Congratulations! We now can hash all of the information that a rubik can offer!
+                    (and read it into console)
+                </p1>
+            </div>
+
+            <div class="MainChapter">
+                <h2>Rotating the Rubik Cube</h2>
+            </div>
+
+            <div class="MainSelectionDiv">
+                <p1>
+                    Yay, we can now read the rubik, but... how can we play it?
+                    <br>Oh boy... This is now where <i>things get tricky really... fast.</i>
+                    <br><br>Lets understand our problem by rephrasing the question: how do we make a turn on the rubik?
+                    <br>A turn of the rubik cube implies turning 9 cubies (a rubik cube is made
+                    out of 26 cubies where a cubie represents one of smaller cubes) which means turning one of 3x3
+                    matrices by 90 degrees.
+                    <br><br>But that is not enough since we only turned a face <i>but not its neighboor faces.</i> So we
+                    turn our attention
+                    to the variable that remembers every face's orientation and switch the colors between the neighboor
+                    faces in a roundabout pattern.
+                </p1>
+
+                // Insert here a disected rubik cube
+
+                <p1>Cool! Lets see all of this in code now!</p1>
+
+                // Insert here less complicated code
+
+                <p1>
+                    All that's left now is to make a way to input our moves!
+                    <br><br> For simplicity, we create a function that takes the following variables: 
+                    the 6 faces of the rubik cube, their orientation, if is it clockwise or anticlockwise and how many 90 degrees turns.
+
+                    <br> This will be our function to call when we want to make a certain turn.
+                    <br><br> Again, for simplicity, we create a function that asks for a character, if its a anticlockwise turn and how many 90 degrees turn.
+                    This same function will determine where our turn will take place depending on the switch cases. Effectively translating the letters into
+                    certain turns of our choice. Lets try typing in F!
+                </p1>
+
+                // input code
+
+                <p1>
+                    Great! Lets try typing in B!
+                </p1>
+                // Insert here failed output
+                <p1>
+                    Only if it was that simple...
+                    <br><br> To explain better our problem: if we attempt a B rotation, it will not choose the edges its
+                    suppose to turn as <b>every edge is unique to the face that is being turned</b>.
+                    <br><br> This problem is solved by making a function that tries to reorganize the faces in a way
+                    that the face we want to make a turn on is the front face then reverse the orientations back to their
+                    original. This also means rotating the faces to match with the new orientation. 
+                </p1>
+                // Where's my switch-a-ton?!
+                <p1>
+                    Lets give it a run!
+                </p1>
+                // Console with good result
+                <p1>
+                    Its a working rubik cube simulator!
+                </p1>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        Test?
+    </footer>
+
+</body>
+
+</html>
